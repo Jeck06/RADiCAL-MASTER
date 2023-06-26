@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RadicalMaster - Video Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your custom styles here */
+        body {
+            background-image: url(https://hsc.co.in/wp-content/uploads/2015/11/backgrounds.jpg);
+            background-size: cover;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        nav ul li a:hover {
+            border-bottom-color: #fff;
+        }
+        main {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        #videos {
+            text-align: center;
+        }
+        #videos iframe {
+            width: 700px;
+            height: 350px;
+        }
+        button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    ul li {
+        list-style-type: none;
+    }
+    </style>
+    <script>
+        function checkAnswer() {
+            var correctAnswers = ["C", "A", "D", "A", "E"];
+            var selectedAnswers = [];
+
+            for (var i = 1; i <= 5; i++) {
+                var answer = document.querySelector('input[name="question' + i + '"]:checked');
+                if (answer) {
+                    selectedAnswers.push(answer.value);
+                } else {
+                    selectedAnswers.push("");
+                }
+            }
+
+            var correct = true;
+
+            for (var i = 0; i < correctAnswers.length; i++) {
+                if (selectedAnswers[i] !== correctAnswers[i]) {
+                    correct = false;
+                    break;
+                }
+            }
+
+            if (correct) {
+                alert("Congratulations all of your answers are correct! You are now a Radical Master!");
+            } else {
+                alert("You have one or more incorrect answers. Try again to become a Radical Master.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Add your page content here -->
+    <header>
+        <h1>RadicalMaster - Video Lessons</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Rules.html">Home</a></li>
+            <li><a href="concept.html">Concept</a></li>
+            <li><a href="Game.html">Game</a></li>
+            <li><a href="Collaboration.html">Collaboration</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome RadicalMaster! Let us learn how to Add and Subtract Radicals</h2>
+        <p>In this lesson, we will explore how to combine and simplify radical expressions involving square roots, cube roots, and other higher-order roots. Addition and subtraction are fundamental operations that allow us to combine like terms and simplify complex expressions.</p>
+        <p>When adding or subtracting radicals, it is essential to have similar radicals with the same root and radicand. We can only combine radicals that have identical roots and radicands. If the radicals are not similar, we need to simplify them first to make them compatible.</p>
+        <p>Throughout this lesson, we will learn various techniques in performing addition or subtraction on radicals. We will practice simplifying radicals, rationalizing denominators, and applying the necessary rules to ensure compatibility.</p>
+        <p>By the end of this lesson, you will have a solid understanding of how to add and subtract radicals, simplify complex expressions, and solve problems that involve these operations. So let's dive in and explore the fascinating world of addition and subtraction with radicals through this video!</p>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <iframe width="700" height="350" src="https://www.youtube.com/embed/tnMfu4SrBnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Now, you are ready to practice your skill and knowledge!</h2>
+        <div class="question">
+    <h4>Question 1:</h4>
+    <p>Which of the following represents the simplified form of √5 + √8?</p>
+    <ul>
+        <li>
+            <input type="radio" id="choice1" name="question1" value="A">
+            <label for="choice1">A) √13</label>
+        </li>
+        <li>
+            <input type="radio" id="choice2" name="question1" value="B">
+            <label for="choice2">B) 2√5</label>
+        </li>
+        <li>
+            <input type="radio" id="choice3" name="question1" value="C">
+            <label for="choice3">C) √5 + 2√2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice4" name="question1" value="D">
+            <label for="choice4">D) √5 + √8</label>
+        </li>
+        <li>
+            <input type="radio" id="choice5" name="question1" value="E">
+            <label for="choice5">E) √13 + √2</label>
+        </li>
+    </ul>
+</div>
+
+<div class="question">
+    <h4>Question 2:</h4>
+    <p>What is the result of (√18 - √7) + (√18 + √7)?</p>
+    <ul>
+        <li>
+            <input type="radio" id="choice6" name="question2" value="A">
+            <label for="choice6">A) 6√2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice7" name="question2" value="B">
+            <label for="choice7">B) 2√18 + 2√7</label>
+        </li>
+        <li>
+            <input type="radio" id="choice8" name="question2" value="C">
+            <label for="choice8">C) 2√18 - 2√7</label>
+        </li>
+        <li>
+            <input type="radio" id="choice9" name="question2" value="D">
+            <label for="choice9">D) 2√18</label>
+        </li>
+        <li>
+            <input type="radio" id="choice10" name="question2" value="E">
+            <label for="choice10">E) 4√7</label>
+        </li>
+    </ul>
+</div>
+
+<div class="question">
+    <h4>Question 3:</h4>
+    <p>Which of the following is equivalent to √12 + √27?</p>
+    <ul>
+        <li>
+            <input type="radio" id="choice11" name="question3" value="A">
+            <label for="choice11">A) √39</label>
+        </li>
+        <li>
+            <input type="radio" id="choice12" name="question3" value="B">
+            <label for="choice12">B) 3√3 + 2√3</label>
+        </li>
+        <li>
+            <input type="radio" id="choice13" name="question3" value="C">
+            <label for="choice13">C) √12 + √27</label>
+        </li>
+        <li>
+            <input type="radio" id="choice14" name="question3" value="D">
+            <label for="choice14">D) 5√3</label>
+        </li>
+        <li>
+            <input type="radio" id="choice15" name="question3" value="E">
+            <label for="choice15">E) 2 + √39</label>
+        </li>
+    </ul>
+</div>
+
+<div class="question">
+    <h4>Question 4:</h4>
+    <p>What is the result of 2√6 - √6?</p>
+    <ul>
+        <li>
+            <input type="radio" id="choice16" name="question4" value="A">
+            <label for="choice16">A) √6</label>
+        </li>
+        <li>
+            <input type="radio" id="choice17" name="question4" value="B">
+            <label for="choice17">B) √6 - 2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice18" name="question4" value="C">
+            <label for="choice18">C) √6 + 2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice19" name="question4" value="D">
+            <label for="choice19">D) 2√6</label>
+        </li>
+        <li>
+            <input type="radio" id="choice20" name="question4" value="E">
+            <label for="choice20">E) 3√6</label>
+        </li>
+    </ul>
+</div>
+
+<div class="question">
+    <h4>Question 5:</h4>
+    <p>Samantha plans to plant two types of flowers with different heights. The first type has a height represented by √18 inches, and the second type has a height represented by 5√2 inches. What will be the total height of the flowers around the circumference of the flower bed if Samantha plants three flowers of the first type and five flowers of the second type??</p>
+    <ul>
+        <li>
+            <input type="radio" id="choice21" name="question5" value="A">
+            <label for="choice21">A) 2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice22" name="question5" value="B">
+            <label for="choice22">B) √2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice23" name="question5" value="C">
+            <label for="choice23">C) √2 - 4</label>
+        </li>
+        <li>
+            <input type="radio" id="choice24" name="question5" value="D">
+            <label for="choice24">D) 4 - √2</label>
+        </li>
+        <li>
+            <input type="radio" id="choice25" name="question5" value="E">
+            <label for="choice25">E) 8√2</label>
+        </li>
+    </ul>
+</div>
+<button onclick="checkAnswer()">Submit</button>
+</div>
+    </main>
+    <nav>
+        <ul>
+            <li><a href="Simplifying Radical Expression.html">Learn Simplifying Radical Expression</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>&copy; 2023 RadicalMaster. All rights reserved.</p>
+    </footer>
+</body>
+</html>

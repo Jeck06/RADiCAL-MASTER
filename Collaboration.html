@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collaboration Hub</title>
+    <style>
+        body {
+            background-image: url(https://hsc.co.in/wp-content/uploads/2015/11/backgrounds.jpg);
+            background-size: cover;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        nav ul li a:hover {
+            border-bottom-color: #fff;
+        }
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .collaboration-form {
+            margin-bottom: 20px;
+        }
+        .message-container {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .message-container .author {
+            font-weight: bold;
+            color: #555;
+        }
+        .message-container .timestamp {
+            font-size: 0.8em;
+            color: #888;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button[type="submit"] {
+            padding: 8px 16px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #333;
+        }
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .social-button {
+            margin-right: 10px;
+        }
+        .reply-button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .reply-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Collaboration Hub</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Rules.html">Home</a></li>
+            <li><a href="concept.html">Concept</a></li>
+            <li><a href="Game.html">Game</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="collaboration-form">
+            <h2>Write a Message</h2>
+            <form id="message-form">
+                <input type="text" id="name-input" placeholder="Your Name" required>
+                <textarea id="message-input" rows="4" placeholder="Write your message here" required></textarea>
+                <br>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div id="message-list">
+            <h2>Message List</h2>
+            <div id="messages"></div>
+        </div>
+        <div class="social-buttons">
+            <button class="social-button" onclick="sendMessage('facebook')">Connect with Facebook</button>
+            <button class="social-button" onclick="sendMessage('twitter')">Connect with Twitter</button>
+            <button class="social-button" onclick="sendMessage('instagram')">Connect with Instagram</button>
+            <button class="social-button" onclick="sendMessage('google')">Connect with Google</button>
+        </div>
+    </main>
+
+    <script>
+        const messageForm = document.getElementById("message-form");
+        const nameInput = document.getElementById("name-input");
+        const messageInput = document.getElementById("message-input");
+        const messageList = document.getElementById("messages");
+
+        const bannedWords = ["fuck", "bitch", "fool", "weak", "pangit", "magayon"];
+
+        messageForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = nameInput.value.trim();
+            const message = sanitizeMessage(messageInput.value.trim());
+            if (name !== "" && message !== "") {
+                const timestamp = new Date().toLocaleString();
+                const messageContainer = document.createElement("div");
+                messageContainer.classList.add("message-container");
+                messageContainer.innerHTML = `
+                    <div class="author">${name}</div>
+                    <div class="message">${message}</div>
+                    <div class="timestamp">${timestamp}</div>
+                `;
+
+                const replyButton = document.createElement("button");
+                replyButton.classList.add("reply-button");
+                replyButton.textContent = "Reply";
+                replyButton.addEventListener("click", function() {
+                    const author = messageContainer.querySelector(".author").textContent;
+                    const message = messageContainer.querySelector(".message").textContent;
+                    const replyText = `@${author}: ${message} `;
+                    messageInput.value = replyText;
+                    messageInput.focus();
+                });
+
+                messageContainer.appendChild(replyButton);
+                messageList.appendChild(messageContainer);
+                nameInput.value = "";
+                messageInput.value = "";
+                nameInput.focus();
+            }
+        });
+
+        function sanitizeMessage(message) {
+            const words = message.split(" ");
+            const sanitizedWords = words.map(word => {
+                const lowerCaseWord = word.toLowerCase();
+                if (bannedWords.includes(lowerCaseWord)) {
+                    return "*".repeat(word.length);
+                }
+                return word;
+            });
+            return sanitizedWords.join(" ");
+        }
+
+        function sendMessage(platform) {
+            const name = nameInput.value.trim();
+            const message = sanitizeMessage(messageInput.value.trim());
+            if (name !== "" && message !== "") {
+                let url = "";
+                switch (platform) {
+                    case "facebook":
+                        url = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(message)}`;
+                        break;
+                    case "twitter":
+                        url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`;
+                        break;
+                    case "instagram":
+                        url = `https://www.instagram.com/?message=${encodeURIComponent(message)}`;
+                        break;
+                    case "google":
+                        url = `https://mail.google.com/mail/?view=cm&to&su=Message&body=${encodeURIComponent(message)}`;
+                        break;
+                }
+                if (url !== "") {
+                    window.open(url, "_blank");
+                    messageInput.value = "";
+                    messageInput.focus();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

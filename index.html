@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RadicalMaster</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url(https://hsc.co.in/wp-content/uploads/2015/11/backgrounds.jpg);
+            background-size: cover;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        nav ul li a:hover {
+            border-bottom-color: #fff;
+        }
+        main {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        #visualization {
+            width: 600px;
+            margin: 20px auto;
+        }
+        #visualization img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to RADiCAL MASTER</h1>
+    </header>
+    <nav>
+        <ul>
+<h3>Rules and Regulations<h3>
+        </ul>
+    </nav>
+    <main>
+    <h2>Eligibility:</h2>
+    <ol>
+        <li> RadicalMaster is open to learners of all ages who are interested in enhancing their understanding of Radicals in mathematics.</li>
+        <li> Users must have access to a compatible device (computer, tablet, or smartphone) with a stable internet connection.</li>
+    </ol>
+
+    <h2>Respectful Conduct:</h2>
+    <ol>
+        <li> Users are expected to engage in respectful and appropriate behavior while using RadicalMaster.</li>
+        <li> Any form of harassment, bullying, or discriminatory language or actions towards other users or instructors will not be tolerated.</li>
+        <li> Users should contribute positively to discussions and maintain a friendly and inclusive learning environment.</li>
+    </ol>
+
+    <h2>Intellectual Property:</h2>
+    <ol>
+        <li> The content, resources, and materials provided within RadicalMaster are protected by intellectual property rights.</li>
+        <li> Users are granted access to the content solely for personal and educational purposes.</li>
+        <li> Users are prohibited from reproducing, distributing, or sharing the content without explicit permission from the owners.</li>
+    </ol>
+
+    <h2>Data Privacy:</h2>
+    <ol>
+        <li> RadicalMaster collects and stores user data to personalize the learning experience and improve the application's functionality.</li>
+        <li> User data will be handled in accordance with applicable data protection laws and the RadicalMaster privacy policy.</li>
+        <li> Users' personal information will not be shared with third parties without explicit consent, except as required by law.</li>
+    </ol>
+
+    <h2>Academic Integrity:</h2>
+    <ol>
+        <li> Users are expected to maintain academic integrity while using RadicalMaster.</li>
+        <li> Plagiarism or any form of cheating in practice exercises or assessments is strictly prohibited.</li>
+        <li> Users should submit their own work and give proper credit to external sources used for reference.</li>
+    </ol>
+
+    <h2>System Requirements:</h2>
+    <ol>
+        <li> Users are responsible for ensuring that their devices meet the minimum system requirements to access RadicalMaster.</li>
+        <li> Compatibility issues arising from outdated software or hardware may affect the user experience, and RadicalMaster is not responsible for resolving such issues.</li>
+    </ol>
+
+    <h2>Disclaimer:</h2>
+    <ol>
+        <li> RadicalMaster strives to provide accurate and up-to-date content. However, it does not guarantee the accuracy, completeness, or reliability of the information provided.</li>
+        <li> RadicalMaster is not responsible for any errors, omissions, or consequences arising from the use of the content or resources within the application.</li>
+    </ol>
+
+    <h2>Modification of Terms:</h2>
+    <ol>
+        <li> RadicalMaster reserves the right to modify the rules and regulations at any time.</li>
+        <li> Users will be notified of any significant changes, and continued use of RadicalMaster after the modifications constitutes acceptance of the updated terms.</li>
+    </ol>
+
+    <p>By accessing and using RadicalMaster, users agree to abide by these rules and regulations. Failure to comply with these rules may result in the suspension or termination of user access to RadicalMaster.</p>
+    <main>
+
+    <div>
+        <input type="checkbox" id="agreeCheckbox">
+        <label for="agreeCheckbox">I agree to the rules and regulations</label>
+    </div>
+
+    <button onclick="proceedToIndex()">Proceed</button>
+</main>
+
+<script>
+    function proceedToIndex() {
+        const agreeCheckbox = document.getElementById("agreeCheckbox");
+        if (agreeCheckbox.checked) {
+            window.location.href = "Rules.html";
+        } else {
+            alert("Please agree to the rules and regulations.");
+        }
+    }
+</script>
+</main>
+
+<footer>
+    &copy; 2023 RadicalMaster. All rights reserved.
+</footer>

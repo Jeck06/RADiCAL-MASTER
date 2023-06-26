@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add and Subtract</title>
+    <style>
+        body {
+            background-image: url(https://hsc.co.in/wp-content/uploads/2015/11/backgrounds.jpg);
+            background-size: cover;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .choices li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+        .choices button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .score {
+            font-size: 18px;
+        }
+        .reward {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .game-over {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn-container button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        nav ul li a:hover {
+            border-bottom-color: #fff;
+        }
+        main {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        #videos {
+            text-align: center;
+        }
+        #videos iframe {
+            width: 700px;
+            height: 350px;
+        }
+    .start-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .start-button:hover {
+        background-color: #45a049;
+    }
+    
+        /* Add your custom styles here */
+        body {
+            background-color: #f4f4f4;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .choices {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .choice {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .choice:hover {
+            background-color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .score {
+            font-size: 18px;
+        }
+        .reward {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .game-over {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn-container button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <nav>
+        <ul>
+            <li><a href="Rules.html">Home</a></li>
+            <li><a href="concept.html">Concept</a></li>
+            <li><a href="Game.html">Game</a></li>
+            <li><a href="Collaboration.html">Collaboration</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    <script>
+        // Radicals Addition and Subtraction Game
+        // Array of levels with questions and rewards
+        var levels = [
+            {
+                questions: [
+                    { question: "√2 + √8", answer: "3√2" },
+                    { question: "√24 - √6", answer: "√6" },
+                    { question: "√27 + √12", answer: "5√3" },
+                    { question: "√7 + √7", answer: "2√7" },
+                    { question: "√45 + √5", answer: "4√5" }
+                ],
+                reward: "Level 1 completed! You unlocked Level 2!"
+            },
+            {
+                questions: [
+                    { question: "2√3 + √2", answer: "2√3 + √2" },
+                    { question: "4√7 - 2√3", answer: "4√7 - 2√3" },
+                    { question: "√10 + 3√2", answer: "√10 + 3√2" },
+                    { question: "5√5 - 2√10", answer: "5√5 - 2√10" },
+                    { question: "√18 + 4√6", answer: "√18 + 4√6" }
+                ],
+                reward: "Level 2 completed! You unlocked Level 3!"
+            },
+            {
+                questions: [
+                    { question: "2√3 + 3√2", answer: "2√3 + 3√2" },
+                    { question: "4√7 - √3", answer: "4√7 - √3" },
+                    { question: "√10 + 2√2", answer: "√10 + 2√2" },
+                    { question: "5√5 - √10", answer: "5√5 - √10" },
+                    { question: "√18 + 5√6", answer: "√18 + 5√6" }
+                ],
+                reward: "Level 3 completed! Congratulations! You completed all levels!"
+            }
+        ];
+
+        var currentLevelIndex = 0;
+        var currentQuestionIndex = 0;
+        var score = 0;
+
+        // Display the current question and choices
+        function displayQuestion() {
+            var questionElement = document.getElementById("question");
+            questionElement.innerHTML = levels[currentLevelIndex].questions[currentQuestionIndex].question;
+
+            var choicesElement = document.getElementById("choices");
+            choicesElement.innerHTML = "";
+
+            var answerChoices = [
+                levels[currentLevelIndex].questions[currentQuestionIndex].answer,
+                generateWrongAnswer(),
+                generateWrongAnswer()
+            ];
+            answerChoices.sort(() => Math.random() - 0.5);
+
+            for (var i = 0; i < answerChoices.length; i++) {
+                var choice = document.createElement("li");
+                choice.setAttribute("class", "choice");
+                choice.setAttribute("onclick", "checkAnswer(this)");
+                choice.innerHTML = answerChoices[i];
+                choicesElement.appendChild(choice);
+            }
+        }
+
+        // Generate a wrong answer for multiple choices
+        function generateWrongAnswer() {
+            var randomNumber = Math.floor(Math.random() * 10) + 1;
+            return randomNumber + "√2";
+        }
+
+        // Check the selected answer and provide feedback
+        function checkAnswer(selectedChoice) {
+            var answer = levels[currentLevelIndex].questions[currentQuestionIndex].answer;
+            var resultElement = document.getElementById("result");
+            var scoreElement = document.getElementById("score");
+
+            if (selectedChoice.innerHTML === answer) {
+                resultElement.innerHTML = "Correct!";
+                resultElement.style.color = "green";
+                score++;
+            } else {
+                resultElement.innerHTML = "Wrong!";
+                resultElement.style.color = "red";
+            }
+
+            scoreElement.innerHTML = "Score: " + score;
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex >= levels[currentLevelIndex].questions.length) {
+                if (currentLevelIndex < levels.length - 1) {
+                    displayLevelComplete();
+                } else {
+                    displayGameOver();
+                }
+            } else {
+                displayQuestion();
+            }
+        }
+
+        // Display level completion message with reward and next level button
+        function displayLevelComplete() {
+            var containerElement = document.getElementById("container");
+            containerElement.innerHTML = "<h1 class='game-over'>Level Complete!</h1>" +
+                "<p class='score'>Score: " + score + "</p>" +
+                "<p class='reward'>" + levels[currentLevelIndex].reward + "</p>" +
+                "<div class='btn-container'><button onclick='nextLevel()'>Next Level</button></div>";
+        }
+
+// Proceed to the next level
+function nextLevel() {
+  currentLevelIndex++;
+  currentQuestionIndex = 0;
+  score = 0;
+  displayQuestion();
+  var resultElement = document.getElementById("result");
+  var scoreElement = document.getElementById("score");
+  resultElement.innerHTML = "";
+  scoreElement.innerHTML = "Score: 0";
+}
+
+        // Display the game over message with final score
+        function displayGameOver() {
+            var containerElement = document.getElementById("container");
+            containerElement.innerHTML = "<h1 class='game-over'>Game Over!</h1>" +
+                "<p class='score'>Final Score: " + score + "</p>" +
+                "<p class='reward'>Well done!</p>" +
+                "<div class='btn-container'><button onclick='restartGame()'>Restart</button></div>";
+        }
+
+        // Restart the game by resetting variables and displaying the first question
+        function restartGame() {
+            currentLevelIndex = 0;
+            currentQuestionIndex = 0;
+            score = 0;
+            displayQuestion();
+            var resultElement = document.getElementById("result");
+            var scoreElement = document.getElementById("score");
+            resultElement.innerHTML = "";
+            scoreElement.innerHTML = "Score: 0";
+        }
+
+        // Start the game when the page loads
+        window.onload = function () {
+            displayQuestion();
+        };
+    </script>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>Addition and Subtraction of Radicals</h1>
+        <p id="question" class="question"></p>
+        <ul id="choices" class="choices"></ul>
+        <p id="result" class="result"></p>
+        <p id="score" class="score">Score: 0</p>
+    </div>
+</body>
+<footer>
+        <p>&copy; 2023 RADiCAL MASTER. All rights reserved.</p>
+    </footer>
+</html>

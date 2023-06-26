@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RadicalMaster - Video Lessons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url(https://hsc.co.in/wp-content/uploads/2015/11/backgrounds.jpg);
+            background-size: cover;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 10px;
+            list-style-type: none;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        nav ul li a:hover {
+            border-bottom-color: #fff;
+            list-style-type: none;
+            marker: none;
+        }
+        ul li {
+            list-style-type: none;
+        }
+        main {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        #videos {
+            text-align: center;
+        }
+        #videos iframe {
+            width: 700px;
+            height: 350px;
+        }
+        button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+        ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+    <script>
+        function checkAnswer() {
+            var correctAnswers = ["C", "B", "A", "D", "E"];
+            var selectedAnswers = [];
+
+            for (var i = 1; i <= 5; i++) {
+                var answer = document.querySelector('input[name="question' + i + '"]:checked');
+                if (answer) {
+                    selectedAnswers.push(answer.value);
+                } else {
+                    selectedAnswers.push("");
+                }
+            }
+
+            var correct = true;
+
+            for (var i = 0; i < correctAnswers.length; i++) {
+                if (selectedAnswers[i] !== correctAnswers[i]) {
+                    correct = false;
+                    break;
+                }
+            }
+
+            if (correct) {
+                alert("Congratulations all of your answers are correct! You are now a Radical Master!");
+            } else {
+                alert("You have one or more incorrect answers. Try again to become a Radical Master.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>RadicalMaster - Video Lessons</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Rules.html">Home</a></li>
+            <li><a href="concept.html">Concept</a></li>
+            <li><a href="Game.html">Game</a></li>
+            <li><a href="Collaboration.html">Collaboration</a></li>
+            <li><a href="developer.html">Developer</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome RadicalMaster! Let us learn how to Simplify Radical Expression</h2>
+        <p>In this lesson, you will learn the fundamental techniques to simplify radical expressions, a crucial skill in dealing with radicals and their operations.</p>
+        <p>Radical expressions often involve square roots, cube roots, and other higher-order roots. Simplifying these expressions allows us to remove unnecessary radicals, simplify complex expressions, and make them easier to work with.</p>
+        <p>Throughout this lesson, we will explore various concepts and techniques related to simplifying radical expressions. You will gain a solid understanding of square roots, simplification rules, rationalizing denominators, and performing arithmetic operations with radicals.</p>
+        <p>By the end of this lesson, you will be equipped with the knowledge and skills to confidently simplify radical expressions and solve problems that involve radicals in different mathematical contexts. The following video will help you achieve your goal, let's watch it!</p>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <iframe width="700" height="350" src="https://www.youtube.com/embed/Ef2gOQbDv7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Now, you are ready to practice your skill and knowledge!</h2>
+        <div class="question">
+            <h4>Question 1:</h4>
+            <p>Which of the following is the simplified form of √48?</p>
+            <ul>
+                <li>
+                    <input type="radio" id="choice1" name="question1" value="A">
+                    <label for="choice1">A) √4</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice2" name="question1" value="B">
+                    <label for="choice2">B) 4</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice3" name="question1" value="C">
+                    <label for="choice3">C) 4√3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice4" name="question1" value="D">
+                    <label for="choice4">D) 8√3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice5" name="question1" value="E">
+                    <label for="choice5">E) 12</label>
+                </li>
+            </ul>
+        </div>
+        <div class="question">
+            <h4>Question 2:</h4>
+            <p>Which of the following is the simplified form of √75?</p>
+            <ul>
+                <li>
+                    <input type="radio" id="choice6" name="question2" value="A">
+                    <label for="choice6">A) 3√5</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice7" name="question2" value="B">
+                    <label for="choice7">B) 5√3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice8" name="question2" value="C">
+                    <label for="choice8">C) 15√5</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice9" name="question2" value="D">
+                    <label for="choice9">D) 6√5</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice10" name="question2" value="E">
+                    <label for="choice10">E) 25</label>
+                </li>
+            </ul>
+        </div>
+        <div class="question">
+            <h4>Question 3:</h4>
+            <p>Which of the following is the simplified form of ∛27?</p>
+            <ul>
+                <li>
+                    <input type="radio" id="choice11" name="question3" value="A">
+                    <label for="choice11">A) 3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice12" name="question3" value="B">
+                    <label for="choice12">B) 9</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice13" name="question3" value="C">
+                    <label for="choice13">C) 3√3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice14" name="question3" value="D">
+                    <label for="choice14">D) ∛3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice15" name="question3" value="E">
+                    <label for="choice15">E) 81</label>
+                </li>
+            </ul>
+        </div>
+        <div class="question">
+            <h4>Question 4:</h4>
+            <p>Which of the following is the simplified form of √128?</p>
+            <ul>
+                <li>
+                    <input type="radio" id="choice16" name="question4" value="A">
+                    <label for="choice16">A) 8√4</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice17" name="question4" value="B">
+                    <label for="choice17">B) 16√2</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice18" name="question4" value="C">
+                    <label for="choice18">C) 4√8</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice19" name="question4" value="D">
+                    <label for="choice19">D) 8√2</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice20" name="question4" value="E">
+                    <label for="choice20">E) 64</label>
+                </li>
+            </ul>
+        </div>
+        <div class="question">
+            <h4>Question 5:</h4>
+            <p>A construction worker needs to cut a metal rod into two equal pieces. The length of the rod is represented by ∛64 meters. To ensure the two pieces are of equal length, the worker wants to simplify the expression. Which of the following represents the simplified form of ∛64?</p>
+            <ul>
+                <li>
+                    <input type="radio" id="choice21" name="question5" value="A">
+                    <label for="choice21">A) 2√2</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice22" name="question5" value="B">
+                    <label for="choice22">B) 3√4</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice23" name="question5" value="C">
+                    <label for="choice23">C) 4√3</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice24" name="question5" value="D">
+                    <label for="choice24">D) ∛16</label>
+                </li>
+                <li>
+                    <input type="radio" id="choice25" name="question5" value="E">
+                    <label for="choice25">E) 4</label>
+                </li>
+            </ul>
+        </div>
+        <button onclick="checkAnswer()">Submit</button>
+    </div>
+    </main>
+    <nav>
+        <ul>
+            <li><a href="Addition and Subtraction on Radicals.html">Learn Addition and Subtraction on Radicals</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>&copy; 2023 RadicalMaster. All rights reserved.</p>
+    </footer>
+</body>
+</html>
